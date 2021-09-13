@@ -14,11 +14,11 @@ public class ex11 {
         double euros = parseDouble(inScan.nextLine());
         System.out.print("What is the exchange rate? ");
         double rate = parseDouble(inScan.nextLine());
+
         double dollars = euros * rate;
-        double hold = (double) ((int) (dollars * 100));
-        if (hold < dollars * 100){
-            dollars += .005;
-        }
+        int hold = (int) (dollars * 1000000);
+        dollars = Math.ceil( (hold / 10000.0) ) / 100.0;
+
         System.out.printf("%.2f euros at an exchange rate of %.4f is\n%.2f U.S. dollars.", euros, rate, dollars);
     }
 }
